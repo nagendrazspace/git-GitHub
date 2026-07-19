@@ -7,6 +7,15 @@ import { formatNumber } from '../utils/finance';
 
 const TIMEFRAMES = ['1D', '1W', '1M', '3M', '6M', '1Y', '5Y'];
 
+interface AnalystRating { label: string; count: number; cls: string }
+const ANALYST_RATINGS: AnalystRating[] = [
+  { label: 'Strong Buy', count: 8, cls: 'text-green-400' },
+  { label: 'Buy',        count: 5, cls: 'text-green-300' },
+  { label: 'Hold',       count: 3, cls: 'text-yellow-400' },
+  { label: 'Sell',       count: 1, cls: 'text-red-300' },
+  { label: 'Strong Sell',count: 0, cls: 'text-red-400' },
+];
+
 export default function StockAnalysis() {
   const { stocks, selectedSymbol, setSelectedSymbol, chartData } = useAppStore();
   const [tf, setTf] = useState('3M');
@@ -95,9 +104,9 @@ export default function StockAnalysis() {
       <div className="bg-surface-800 border border-surface-600 rounded-lg p-4">
         <h3 className="text-sm font-semibold text-white mb-3">Analyst Consensus</h3>
         <div className="flex items-center gap-6">
-          {[['Strong Buy', 8, 'text-green-400'], ['Buy', 5, 'text-green-300'], ['Hold', 3, 'text-yellow-400'], ['Sell', 1, 'text-red-300'], ['Strong Sell', 0, 'text-red-400']].map(([label, count, cls]) => (
-            <div key={label as string} className="flex flex-col items-center">
-              <span className={`text-xl font-bold ${cls}`}>{count as number}</span>
+          {ANALYST_RATINGS.map(({ label, count, cls }) => (
+            <div key={label} className="flex flex-col items-center">
+              <span className={`text-xl font-bold ${cls}`}>{count}</span>
               <span className="text-xs text-slate-500 text-center">{label}</span>
             </div>
           ))}

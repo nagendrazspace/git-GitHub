@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { useAppStore } from '../../store/appStore';
 
 const navItems = [
@@ -18,14 +19,21 @@ export function Sidebar() {
     <aside className={`fixed left-0 top-14 h-[calc(100vh-3.5rem)] bg-surface-800 border-r border-surface-600 transition-all duration-300 z-20 flex flex-col ${sidebarOpen ? 'w-56' : 'w-14'}`}>
       <nav className="flex-1 py-2 overflow-y-auto">
         {navItems.map(item => (
-          <a
+          <NavLink
             key={item.path}
-            href={item.path}
-            className="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-surface-700 transition-colors text-sm"
+            to={item.path}
+            end={item.path === '/'}
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-4 py-2.5 transition-colors text-sm ${
+                isActive
+                  ? 'bg-brand-700 text-white'
+                  : 'text-slate-400 hover:text-white hover:bg-surface-700'
+              }`
+            }
           >
             <span className="text-lg shrink-0">{item.icon}</span>
             {sidebarOpen && <span>{item.label}</span>}
-          </a>
+          </NavLink>
         ))}
       </nav>
 

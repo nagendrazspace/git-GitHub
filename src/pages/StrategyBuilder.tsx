@@ -121,7 +121,7 @@ export default function StrategyBuilder() {
             </div>
             <div className="bg-surface-800 border border-surface-600 rounded p-3 text-center">
               <p className="text-xs text-slate-500">Max Profit</p>
-              <p className={`text-lg font-bold ${maxProfit > 1e6 ? 'text-green-400' : 'text-green-400'}`}>
+              <p className="text-lg font-bold text-green-400">
                 {maxProfit > 9999 ? 'Unlimited' : `₹${maxProfit.toFixed(0)}`}
               </p>
             </div>
