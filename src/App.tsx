@@ -10,6 +10,7 @@ import Screener from './pages/Screener';
 import OptionsChain from './pages/OptionsChain';
 import StrategyBuilder from './pages/StrategyBuilder';
 import Futures from './pages/Futures';
+import FOSignals from './pages/FOSignals';
 import News from './pages/News';
 import Portfolio from './pages/Portfolio';
 
@@ -33,6 +34,7 @@ function AppLayout() {
             <Route path="/options"   element={<OptionsChain />} />
             <Route path="/strategy"  element={<StrategyBuilder />} />
             <Route path="/futures"   element={<Futures />} />
+            <Route path="/fo-signals" element={<FOSignals />} />
             <Route path="/news"      element={<News />} />
             <Route path="/portfolio" element={<Portfolio />} />
           </Routes>
