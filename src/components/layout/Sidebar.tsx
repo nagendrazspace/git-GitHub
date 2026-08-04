@@ -2,14 +2,15 @@ import { NavLink } from 'react-router-dom';
 import { useAppStore } from '../../store/appStore';
 
 const navItems = [
-  { path: '/',           icon: '📊', label: 'Dashboard' },
-  { path: '/stocks',     icon: '📈', label: 'Stock Analysis' },
-  { path: '/screener',   icon: '🔍', label: 'Screener' },
-  { path: '/options',    icon: '⚡', label: 'Options Chain' },
-  { path: '/strategy',   icon: '🎯', label: 'Strategy Builder' },
-  { path: '/futures',    icon: '🔮', label: 'Futures' },
-  { path: '/news',       icon: '📰', label: 'News & Sentiment' },
-  { path: '/portfolio',  icon: '💼', label: 'Portfolio' },
+  { path: '/',            icon: '📊', label: 'Dashboard' },
+  { path: '/stocks',      icon: '📈', label: 'Stock Analysis' },
+  { path: '/screener',    icon: '🔍', label: 'Screener' },
+  { path: '/options',     icon: '⚡', label: 'Options Chain' },
+  { path: '/strategy',    icon: '🎯', label: 'Strategy Builder' },
+  { path: '/futures',     icon: '🔮', label: 'Futures' },
+  { path: '/fo-signals',  icon: '🚦', label: 'F&O Signals' },
+  { path: '/news',        icon: '📰', label: 'News & Sentiment' },
+  { path: '/portfolio',   icon: '💼', label: 'Portfolio' },
 ];
 
 export function Sidebar() {
