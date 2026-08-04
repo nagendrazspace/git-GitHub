@@ -39,3 +39,18 @@ Open http://localhost:5173
 ```bash
 npm run build
 ```
+
+## iOS app
+
+The project is packaged for iOS with Capacitor. Run the following commands on macOS with
+Xcode installed:
+
+```bash
+npm install
+npm run ios:sync
+npm run ios:open
+```
+
+Build and run the `App` target from Xcode on an iOS Simulator or connected device. Configure
+your Apple development team and signing in Xcode before installing on a physical device or
+distributing through the App Store. The generated native project is in `ios/`.
